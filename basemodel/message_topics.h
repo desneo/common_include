@@ -25,6 +25,8 @@ inline constexpr const char* kSafety = "plane/safety";               ///< 安全
 inline constexpr const char* kTargets = "plane/targets";             ///< 观测目标
 inline constexpr const char* kGuidance = "plane/guidance";           ///< 导引指令
 inline constexpr const char* kVehicleState = "plane/state";          ///< 本机状态（广播）
+inline constexpr const char* kMessageReceipt = "plane/message_receipt";  ///< 报文送达/参数错误回执
+inline constexpr const char* kCommandFailed = "plane/command_failed";    ///< 飞控指令失败通知
 
 }  // namespace plane::model::topics
 
