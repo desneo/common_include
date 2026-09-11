@@ -13,7 +13,6 @@ struct GeoPoint {
     double latitude = 0.0;
     double longitude = 0.0;
     double height = 0.0;
-    double velocity = 0.0;
 };
 
 struct Route {
