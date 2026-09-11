@@ -5,12 +5,14 @@
  * 北东地速度）。
  */
 
+#include <memory>
 #include <string>
 
 #include <Pluma/Pluma.hpp>
 
 #include "basemodel/target.h"
 #include "basemodel/vehicle_state.h"
+#include "shared_resource_api.h"
 
 using plane::model::DetectTarget;
 using plane::model::VehicleState;
@@ -25,6 +27,7 @@ struct GuidanceConfig {
     double kp = 0.8;                   ///< 比例增益
     double kd = 0.1;                   ///< 微分增益
     bool enable_yaw = true;            ///< 是否输出偏航控制量
+    std::shared_ptr<SharedResource> shared_resource;  ///< 宿主注入的共享资源（可空）
 };
 
 /// 发送给飞控的北东地速度指令。

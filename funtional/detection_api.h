@@ -5,6 +5,7 @@
  * detect（单帧检测）。
  */
 
+#include <memory>
 #include <string>
 #include <vector>
 
@@ -12,6 +13,7 @@
 #include <opencv2/core.hpp>
 
 #include "basemodel/target.h"
+#include "shared_resource_api.h"
 
 using plane::model::DetectTarget;
 
@@ -26,6 +28,7 @@ struct DetectConfig {
     int input_width = 640;              ///< 网络输入宽
     int input_height = 640;             ///< 网络输入高
     bool use_gpu = false;               ///< 是否使用加速设备
+    std::shared_ptr<SharedResource> shared_resource;  ///< 宿主注入的共享资源（可空）
 };
 
 /// 检测插件：只提供 init 与 detect 两个接口。

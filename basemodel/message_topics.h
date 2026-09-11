@@ -12,8 +12,10 @@
 namespace plane::model::topics {
 
 // ---- 下行：地面站 -> 本机 ----
-inline constexpr const char* kTask = "plane/task";      ///< 任务下发
-inline constexpr const char* kCancel = "plane/cancel";  ///< 任务取消
+inline constexpr const char* kTask = "plane/task";                     ///< 任务（多节点行为树）
+inline constexpr const char* kCommand = "plane/command";               ///< 指令（单动作）
+inline constexpr const char* kTaskTerminate = "plane/task_terminate";  ///< 任务终止
+inline constexpr const char* kCancel = "plane/cancel";                 ///< 兼容旧键，等价任务终止
 
 // ---- 上行：本机 -> 地面站 / 其他飞机 ----
 inline constexpr const char* kTaskRejected = "plane/task_rejected";  ///< 任务被拒

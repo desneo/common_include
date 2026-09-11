@@ -5,12 +5,14 @@
  * track（输出最新目标位置）。
  */
 
+#include <memory>
 #include <string>
 
 #include <Pluma/Pluma.hpp>
 #include <opencv2/core.hpp>
 
 #include "basemodel/target.h"
+#include "shared_resource_api.h"
 
 using plane::model::DetectTarget;
 
@@ -22,6 +24,7 @@ struct TrackConfig {
     float confidence_threshold = 0.4F;  ///< 置信度过滤阈值
     int lost_frame_limit = 30;          ///< 连续丢失帧数上限（超过判定目标丢失）
     int search_radius = 64;             ///< 局部搜索半径（像素）
+    std::shared_ptr<SharedResource> shared_resource;  ///< 宿主注入的共享资源（可空）
 };
 
 /// 单目标跟踪插件：只提供 init 与 track 两个接口。
