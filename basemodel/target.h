@@ -12,15 +12,15 @@
 
 namespace plane::model {
 
-struct ObservedTarget {
+struct DetectTarget {
     std::string id;
-    std::string typeCode;
-    double confidence = 0.0;
+    std::string trackId;
+    float confidence = 0.0;
     GeoPoint geoPos;
-    double pixel_x = 0.0;
-    double pixel_y = 0.0;
-    double width = 0.0;
-    double height = 0.0;
+    int cx = 0;
+    int cy = 0;
+    int width = 0;
+    int height = 0;
     std::int64_t timestamp_ms = 0;
     std::vector<GeoPoint> trail;
 };
