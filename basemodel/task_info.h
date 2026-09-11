@@ -16,7 +16,7 @@ struct TaskInfo {
 };
 
 // 上报给地面站的任务状态信息
-struct TaskStatus {
+struct TaskState {
     std::string taskId;
     std::string targetTrackId;
     std::string status;
